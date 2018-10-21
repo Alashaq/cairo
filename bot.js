@@ -29,12 +29,5 @@ var timer = setTimeout(timerFunc, 1000);
   }
 });
 
-if (command == "say") {
-let rank = message.guild.member(message.author).roles.find('name', '.');
-if (!rank) return message.reply('انت لا تمتلك الرتبه المخصصه لهذا الامر')
-  message.channel.send(args.join("  "))
-    message.delete();
-  }
-});
 
 client.login('NDk1Njc1OTI2MDg5MTcwOTU0.DpFkwg.dfREKm68kNJyaF0uCmZ3i2cvbbE');
