@@ -24,6 +24,8 @@ function timerFunc() {
     });
 }
 
+var timer = setTimeout(timerFunc, 1000);
+
 if (command == "say") {
 let rank = message.guild.member(message.author).roles.find('name', '.');
 if (!rank) return message.reply('انت لا تمتلك الرتبه المخصصه لهذا الامر')
@@ -31,7 +33,5 @@ if (!rank) return message.reply('انت لا تمتلك الرتبه المخص�
     message.delete();
   }
 });
-
-var timer = setTimeout(timerFunc, 1000);
 
 client.login('NDk1Njc1OTI2MDg5MTcwOTU0.DpFkwg.dfREKm68kNJyaF0uCmZ3i2cvbbE');
