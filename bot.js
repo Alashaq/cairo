@@ -26,6 +26,9 @@ function timerFunc() {
 
 var timer = setTimeout(timerFunc, 1000);
 
+  }
+});
+
 if (command == "say") {
 let rank = message.guild.member(message.author).roles.find('name', '.');
 if (!rank) return message.reply('انت لا تمتلك الرتبه المخصصه لهذا الامر')
