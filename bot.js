@@ -26,8 +26,4 @@ function timerFunc() {
 
 var timer = setTimeout(timerFunc, 1000);
 
-  }
-});
-
-
 client.login('NDk1Njc1OTI2MDg5MTcwOTU0.DpFkwg.dfREKm68kNJyaF0uCmZ3i2cvbbE');
