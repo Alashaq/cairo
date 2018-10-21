@@ -11,18 +11,6 @@ client.on('ready', () => {
   console.log('=======================================')
 });
 
-
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-
-
-
 if (command == "say") {
 let rank = message.guild.member(message.author).roles.find('name', '.');
 if (!rank) return message.reply('انت لا تمتلك الرتبه المخصصه لهذا الامر')
@@ -30,55 +18,32 @@ if (!rank) return message.reply('انت لا تمتلك الرتبه المخص�
     message.delete();
   }
 });
+var ServerID = "494284550789136384"; //اي دي السيرفر
+var ChannelID = "494284550789136386";// اي دي الروم
 
 
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
-client.on('message', message => {
-    if(message.content === '^^DailyForAll'){
-        message.channel.send('#daily')
-    }
-});
+client.on('warn', console.warn);
 
-client.on('message', message => {
-    if(message.content === '^^AllCredit'){
-        message.channel.send('#credits')
-    }
-});
+client.on('error', console.error);
 
 
-client.on('message', message => {
-    if(message.content === '^^RepForRobben'){
-        message.channel.send('#rep <@371060496276783104>')
-    }
-});
+client.on('ready', () => console.log('ProBot Credits Miner Discord.js Script','\n','By Alphacodes','\n','ProBot credits miner is ready!'));
 
-client.on('message', message => {
-    if(message.content === '^^RepForBoss'){
-        message.channel.send('#rep <@443152649899212810>')
-    }
-});
+client.on('disconnect', () => console.log('PROBOT credits miner had disconnected!'));
 
-client.on('message', message => {
-    if(message.content === '^^RepForAlashaq'){
-        message.channel.send('#rep <@346045919072092161>')
-    }
-});
+client.on('reconnecting', () => console.log('PROBOT credits miner is reconnecting...'));
 
 
-
-client.on('message', message => {
-if (message.content === "سبام" + "<@" + `${client.user.id}` + ">") {
-      let count = 0;
-      let ecount = 0;
-      for(let x = 0; x < 90000; x++) {
-        message.channel.send(`سباام يولد يلعن اومم الفله ${x}`)
-          .then(m => {
-            count++;
-          })
-          
-        }
-      }
-});
+function timerFunc() {
+    client.on('message', msg => {
+        client.guilds.get(ServerID).channels.get(ChannelID).send(Math.random().toString(36).substring(7)) 
 
 
+    });
+}
+
+var timer = setTimeout(timerFunc, 1000);
 client.login('NDk1Njc1OTI2MDg5MTcwOTU0.DpFkwg.dfREKm68kNJyaF0uCmZ3i2cvbbE');
